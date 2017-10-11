@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+platform='unknown'
+unamestr=`uname`
+
+URL=$1
+
+if [ "$unamestr" = "Darwin" ]; then
+    open "$URL"
+elif [ -z "$DISPLAY" ]; then
+	echo "In a terminal, skipping launching web browser."
+elif [ -n "$BROWSER" ]; then
+	$BROWSER "$URL"
+elif which xdg-open > /dev/null; then
+	xdg-open "$URL"
+elif which gnome-open > /dev/null; then
+	gnome-open "$URL"
+elif which open > /dev/null; then
+	open "$URL"
+else
+	echo "Failed to load web browser."
+fi

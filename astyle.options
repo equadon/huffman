@@ -1,0 +1,28 @@
+# no backup files
+suffix=none
+
+recursive
+
+# bracket style
+style=1tbs
+
+# indentation
+indent=spaces=4
+indent-switches
+indent-cases
+indent-col1-comments
+
+min-conditional-indent=0
+
+# padding
+break-blocks
+pad-oper
+unpad-paren
+pad-header
+delete-empty-lines
+
+# pointers
+align-pointer=name
+
+convert-tabs
+max-code-length=100
